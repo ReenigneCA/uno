@@ -9,7 +9,8 @@
 <html lang="en">
 {{>partials/head}}
 {{>partials/_google-tag-manager}}
-<body class="{{uid}}" data-spy="scroll" data-target="#affix" data-offset="120">
+{{>partials/_iframe_resize}}
+<body class="{{uid}}" data-spy="scroll" data-target="#affix" data-offset="120" onLoad="resize();">
 <div id="wrapper">
     <header>
         {{^_disableNavbar}}

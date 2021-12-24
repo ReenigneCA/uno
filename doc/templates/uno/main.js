@@ -3,6 +3,7 @@
 document.addEventListener(
     "DOMContentLoaded",
     function () {
+        resizeObserver.observe(document.getElementsByClassName("body-content")[0]);
 
         const navbar = document.querySelector("header > .navbar");
         if (document.body.classList.contains("front-page")) {

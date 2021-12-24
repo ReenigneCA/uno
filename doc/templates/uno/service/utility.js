@@ -163,3 +163,15 @@ function breakText() {
         $(this).breakWord();
     });
 }
+
+const resizeObserver = new ResizeObserver(entries => {
+    for (let entry of entries) {
+        var height = 0;
+        if (entry.contentBoxSize) {
+            height = entry.contentBoxSize[0].blockSize;
+        } else {
+            height = entry.contentRect.height;
+        }
+        window.parent.postMessage(["setHeight", height], "*");
+    }
+});
